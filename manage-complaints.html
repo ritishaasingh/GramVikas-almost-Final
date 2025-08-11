@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GramVikas Admin - Complaint Verification</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    header {
+      padding: 0.1rem 0 !important;
+    }
+
+    header img {
+      height: 60px;
+      width: auto;
+    }
+
+    body {
+      background-color: #f7e9d6;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    }
+
+    .table th {
+      background-color: #490600;
+      color: #f7e9d6;
+    }
+
+    .btn-verify {
+      background-color: #28a745;
+      color: white;
+      border: none;
+    }
+
+    .btn-reject {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+    }
+    #google_translate_element {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 0.875rem;
+      min-width: 120px;
+      margin-right: 1rem;
+      }
+
+    /* Prevent Google translate toolbar jump */
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <header class="p-3 shadow-sm" style="background-color: #3e000f;">
+      <div class="container">
+       <div class="d-flex flex-wrap align-items-center justify-content-between">
+            <img src="Resources/Images/logo.png" alt="GramVikas Logo" class="me-3">
+            <ul class="nav mb-0">
+              <li>
+              <div id="google_translate_element"></div>
+            </li>
+              <li><a href="index.html" class="nav-link px-2" style="color: #f7e9d6;">Home</a></li>
+              <li><a href="admin-dashboard.html" class="nav-link px-2" style="color: #f7e9d6;">Dashboard</a></li>
+              <li><a href="#" class="nav-link px-2" style="color: #f7e9d6;">Profile</a></li>
+              <li><a href="admin.html" class="nav-link px-2" style="color: #f7e9d6;">Logout</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <!-- Admin Complaint Table -->
+  <div class="container my-5">
+    <div class="p-4 rounded-4 shadow-sm bg-white">
+      <h3 class="mb-4 fw-bold text-center" style="color: #490600;">Complaint Verification Panel</h3>
+
+      <table class="table table-bordered table-hover align-middle">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Citizen Name</th>
+            <th>Contact</th>
+            <th>Type</th>
+            <th>Area</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="complaintTableBody">
+          <!-- Dynamic Rows -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <section id="footer" style="background-color: #490600; color: #f7e9d6;">
+    <div class="container justify-content-between">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top border-light">
+        <div class="col mb-3">
+          <img src="Resources/Images/logo.png" width="150" alt="">
+        </div>
+        <div class="col mb-3"></div>
+        <div class="col mb-3">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">Home</a></li>
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">Citizen</a></li>
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">Admin</a></li>
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">About</a></li>
+          </ul>
+        </div>
+        <div class="col mb-3"></div>
+        <div class="col mb-3">
+          <h5>Contact Us</h5>
+          <p>IIM Rohtak<br>Management City NH-10 Southern Bypass, Sunaria,<br>Rohtak-124010 Haryana, India</p>
+        </div>
+      </footer>
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-light">
+        <p>© 2025 GramVikas. All Rights Reserved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    // Example data - Replace with API call to fetch complaints
+    const complaints = [
+      {
+        id: 1,
+        name: "Ravi Kumar",
+        contact: "9876543210",
+        type: "Water Supply",
+        area: "Sector 12",
+        description: "Water not coming since morning.",
+        photo: "Resources/Images/sample.jpg",
+        status: "Pending"
+      },
+      {
+        id: 2,
+        name: "Priya Sharma",
+        contact: "9876501234",
+        type: "Electricity",
+        area: "Village Rampur",
+        description: "Frequent power cuts during evening.",
+        photo: "Resources/Images/sample2.jpg",
+        status: "Pending"
+      }
+    ];
+
+    function renderTable() {
+      const tableBody = document.getElementById("complaintTableBody");
+      tableBody.innerHTML = "";
+      complaints.forEach((c, index) => {
+        tableBody.innerHTML += `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${c.name}</td>
+            <td>${c.contact}</td>
+            <td>${c.type}</td>
+            <td>${c.area}</td>
+            <td>${c.description}</td>
+            <td><img src="${c.photo}" width="80" class="rounded"></td>
+            <td><span class="badge ${c.status === 'Verified' ? 'bg-success' : c.status === 'Rejected' ? 'bg-danger' : 'bg-secondary'}">${c.status}</span></td>
+            <td>
+              <button class="btn btn-verify btn-sm me-2" onclick="updateStatus(${c.id}, 'Verified')">Verify</button>
+              <button class="btn btn-reject btn-sm" onclick="updateStatus(${c.id}, 'Rejected')">Reject</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function updateStatus(id, newStatus) {
+      const complaint = complaints.find(c => c.id === id);
+      if (complaint) {
+        complaint.status = newStatus;
+        renderTable();
+      }
+    }
+
+    renderTable();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "hi,en",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+  <script
+    type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  ></script>
+</body>
+
+</html>

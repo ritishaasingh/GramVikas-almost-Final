@@ -1,0 +1,57 @@
+#about .bg-light {
+  background: linear-gradient(135deg, #f5f5dc, #f0e6d2); /* beige to light cream */
+}
+#about ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+body {
+  background-color: #f6e5c0 !important;
+}
+.custom-burgundy {
+    background-color: #3e000f; /* Burgundy */
+}
+
+body { 
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}  
+#footer img {
+  filter: brightness(0) invert(1);
+}
+#about .bg-light {
+  background: linear-gradient(135deg, #f5f5dc, #f0e6d2); /* beige to light cream */
+}
+#about ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+body {
+  background-color: #f6e5c0 !important;
+}
+.custom-burgundy {
+    background-color: #3e000f; /* Burgundy */
+}
+
+body { 
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}  
+#footer img {
+  filter: brightness(0) invert(1);
+}
+/* Toggle buttons */
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 0.9rem;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    /* Google Translate dropdown adjustments */
+    #google_translate_element select {
+      border-radius: 5px;
+      padding: 3px;
+      font-size: 0.9rem;
+    }
+    

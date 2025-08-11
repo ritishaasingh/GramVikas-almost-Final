@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GramVikas — Scheme Eligibility Checker</title>
+
+  <!-- same bootstrap extension you used -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <style>
+    :root{
+      --brand:#490600;
+      --white:#f6e5c0;
+    }
+    body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:#f6e5c0; color:var(--brand); }
+    .topbar{ background:var(--brand); color:var(--white); }
+        .topbar a {
+      text-decoration: none;
+    }
+
+    .scheme-card{ border:1px solid rgba(73,6,0,0.12); border-radius:.5rem; background:#ffff; }
+    .scheme-card img{ width:100%; height:160px; object-fit:cover; border-top-left-radius:.5rem; border-top-right-radius:.5rem; }
+    .btn-brand{ background:var(--brand); color:var(--white); border: none; }
+    .btn-brand:hover{ background:#2e0300; }
+    .result-card{ border:1px solid rgba(73,6,0,0.12); border-radius:.5rem; padding:1rem; background:#ffff; }
+  </style>
+</head>
+<body>
+
+  <!-- Header (consistent with your site) -->
+  <header class="topbar p-3">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <img src="Resources/Images/logo.png" alt="GramVikas logo" height="48" onerror="this.style.display='none'">
+        
+      </div>
+      <div>
+        <a href="index.html" class="text-white me-3">Home</a>
+        <a href="citizen dashboard.html" class="text-white me-3">Dashboard</a>
+        <a href="#" class="text-white me-3">Profile</a>
+        <a href="#" class="text-white">Log Out</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- left: scheme gallery -->
+      <div class="col-lg-7">
+        <h4 class="mb-3">Available Schemes</h4>
+        <div class="row g-3">
+          <!-- Scheme cards: one per scheme -->
+          <div class="col-md-6">
+            <div class="scheme-card">
+              <img src="Resources/Images/ruralcow.jpeg" alt="Rural Livelihood Mission" onerror="this.src='https://via.placeholder.com/600x320?text=Rural+Livelihood+Mission'">
+              <div class="p-3">
+                <h6 class="mb-0">Rural Livelihood Mission</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="scheme-card">
+              <img src="Resources/Images/farmerempowerment.jpeg" alt="PM-KISAN Crop Insurance" onerror="this.src='https://via.placeholder.com/600x320?text=PM-KISAN+Crop+Insurance'">
+              <div class="p-3">
+                <h6 class="mb-0">PM-KISAN Crop Insurance</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="scheme-card">
+              <img src="Resources/Images/Agriculture-and-MGNREGA.jpg" alt="Tribal Welfare Grant" onerror="this.src='https://via.placeholder.com/600x320?text=Tribal+Welfare+Grant'">
+              <div class="p-3">
+                <h6 class="mb-0">Tribal Welfare Grant</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="scheme-card">
+              <img src="Resources/Images/India-Wheat-farmer.jpg" alt="Kisan Samman Nidhi" onerror="this.src='https://via.placeholder.com/600x320?text=Kisan+Samman+Nidhi'">
+              <div class="p-3">
+                <h6 class="mb-0">Kisan Samman Nidhi Yojana</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="scheme-card">
+              <img src="Resources/Images/youthempowerment.jpg" alt="Youth Education Support" onerror="this.src='https://via.placeholder.com/600x320?text=Youth+Education+Support'">
+              <div class="p-3">
+                <h6 class="mb-0">Youth Education Support Scheme</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="scheme-card">
+              <img src="Resources/Images/women-empowerment.jpg" alt="Women Empowerment Scheme" onerror="this.src='https://via.placeholder.com/600x320?text=Women+Empowerment+Scheme'">
+              <div class="p-3">
+                <h6 class="mb-0">Women Empowerment Scheme</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: eligibility form -->
+      <div class="col-lg-5">
+        <div class="p-4 shadow-sm rounded" style="border:1px solid rgba(73,6,0,0.06);">
+          <h5 class="mb-3">General Eligibility</h5>
+
+          <form id="eligibilityForm" novalidate>
+            <div class="mb-2">
+              <label class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+
+            <div class="row">
+              <div class="col-6 mb-2">
+                <label class="form-label">Age</label>
+                <input type="number" id="age" class="form-control" required min="0">
+              </div>
+              <div class="col-6 mb-2">
+                <label class="form-label">Gender</label>
+                <select id="gender" class="form-select" required>
+                  <option value="">Choose...</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label">Occupation / Profession</label>
+              <select id="occupation" class="form-select" required>
+                <option value="">Choose...</option>
+                <option>Farmer</option>
+                <option>Student</option>
+                <option>Daily Wage Worker</option>
+                <option>Self-Employed</option>
+                <option>Unemployed</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label">Region</label>
+              <select id="region" class="form-select" required>
+                <option value="">Choose...</option>
+                <option>Rural</option>
+                <option>Urban</option>
+                <option>Tribal</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Annual Income (INR)</label>
+              <input type="number" id="income" class="form-control" required min="0" placeholder="e.g., 120000">
+            </div>
+
+            <div class="d-grid">
+              <button type="button" class="btn btn-brand btn-brand btn-brand btn-brand btn-brand btn-brand" id="checkBtn" style="background:var(--brand); color:#fff;">
+                Check Eligibility
+              </button>
+            </div>
+          </form>
+
+          <div id="resultArea" class="mt-4 d-none">
+            <div class="result-card">
+              <h6>Eligible Schemes</h6>
+              <ul id="eligibleList" class="list-unstyled mb-0"></ul>
+              <div class="mt-3 text-end">
+                <button class="btn btn-sm btn-outline-secondary" id="resetBtn">Reset</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="noResult" class="mt-4 d-none">
+            <div class="alert alert-warning mb-0">No schemes found for the provided profile.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Footer Section -->
+  <section id="footer" style="background-color: #490600; color: #f7e9d6;">
+    <div class="container justify-content-between">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top border-light">
+        <div class="col mb-3">
+          <img src="Resources/Images/logo.png" width="150" alt="">
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a href="#"><img src="Resources/Images/facebook-svgrepo-com.svg" width="24" height="24"></a></li>
+            <li class="ms-3"><a href="#"><img src="Resources/Images/instagram-svgrepo-com.svg" width="24" height="24"></a></li>
+          </ul>
+        </div>
+        <div class="col mb-3"></div>
+        <div class="col mb-3">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">Home</a></li>
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">Citizen</a></li>
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">Admin</a></li>
+            <li><a href="#" class="nav-link p-0" style="color: #f7e9d6;">About</a></li>
+          </ul>
+        </div>
+        <div class="col mb-3"></div>
+        <div class="col mb-3">
+          <h5>Contact Us</h5>
+          <p>IIM Rohtak<br>Management City NH-10 Southern Bypass, Sunaria,<br>Rohtak-124010 Haryana, India</p>
+        </div>
+      </footer>
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-light">
+        <p>© 2025 GramVikas. All Rights Reserved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+  <!-- logic: uses the same script.js "mini-database" concept -->
+  <script>
+    // The 6 schemes (only these 6 are used)
+    const schemeRules = [
+      {
+        id: "Rural Livelihood Mission",
+        check: (data) => {
+          // rural livelihood often targets low-income rural self/ daily-wage workers
+          return (data.region === "Rural" && data.income < 200000 && (data.occupation.toLowerCase().includes("daily") || data.occupation.toLowerCase().includes("self") || data.occupation.toLowerCase().includes("unemployed")));
+        }
+      },
+      {
+        id: "PM-KISAN Crop Insurance",
+        check: (data) => {
+          // farmers only (basic mock rule)
+          return data.occupation === "Farmer";
+        }
+      },
+      {
+        id: "Tribal Welfare Grant",
+        check: (data) => {
+          return data.region === "Tribal";
+        }
+      },
+      {
+        id: "Kisan Samman Nidhi Yojana",
+        check: (data) => {
+          // small-holding farmers under income threshold
+          return data.occupation === "Farmer" && data.income < 300000;
+        }
+      },
+      {
+        id: "Youth Education Support Scheme",
+        check: (data) => {
+          // youth students 17–26 and low-to-mid income
+          return data.occupation === "Student" && data.age >= 17 && data.age <= 26 && data.income < 250000;
+        }
+      },
+      {
+        id: "Women Empowerment Scheme",
+        check: (data) => {
+          // women with income up to threshold
+          return data.gender === "Female" && data.income < 250000;
+        }
+      }
+    ];
+
+    // helper: read form values
+    function readForm() {
+      return {
+        name: document.getElementById('name').value.trim(),
+        age: parseInt(document.getElementById('age').value || '0'),
+        gender: document.getElementById('gender').value,
+        occupation: document.getElementById('occupation').value,
+        region: document.getElementById('region').value,
+        income: parseInt(document.getElementById('income').value || '0')
+      };
+    }
+
+    // main check
+    document.getElementById('checkBtn').addEventListener('click', function () {
+      // simple validation
+      const data = readForm();
+      if (!data.name || !data.age || !data.gender || !data.occupation || !data.region || isNaN(data.income)) {
+        alert('Please fill all fields.');
+        return;
+      }
+
+      // find eligible schemes
+      const eligible = schemeRules.filter(s => s.check(data)).map(s => s.id);
+
+      // show results
+      const resultArea = document.getElementById('resultArea');
+      const eligibleList = document.getElementById('eligibleList');
+      const noResult = document.getElementById('noResult');
+
+      eligibleList.innerHTML = '';
+
+      if (eligible.length > 0) {
+        eligible.forEach(name => {
+          const li = document.createElement('li');
+          li.className = 'd-flex align-items-center py-2 border-bottom';
+          // small icon beside each result (use placeholder small image)
+          li.innerHTML = `<div style="width:42px;height:30px;margin-right:10px;"><img src="Resources/Images/icon_placeholder.png" style="max-width:100%;height:100%;object-fit:cover;" onerror="this.src='https://via.placeholder.com/42x30'"></div><div>${name}</div>`;
+          eligibleList.appendChild(li);
+        });
+
+        noResult.classList.add('d-none');
+        resultArea.classList.remove('d-none');
+      } else {
+        resultArea.classList.add('d-none');
+        noResult.classList.remove('d-none');
+      }
+
+      // scroll to result
+      setTimeout(() => {
+        const el = document.getElementById( eligible.length>0 ? 'resultArea' : 'noResult' );
+        if(el) el.scrollIntoView({behavior:'smooth', block:'center'});
+      }, 150);
+    });
+
+    // reset button
+    document.getElementById('resetBtn').addEventListener('click', function () {
+      document.getElementById('eligibilityForm').reset();
+      document.getElementById('resultArea').classList.add('d-none');
+      document.getElementById('noResult').classList.add('d-none');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - GramVikas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    #google_translate_element {
+      margin-left: 15px;
+    }
+  </style>
+</head>
+<body style="background-color: #f6e5c0;">
+
+<header class="p-3 shadow-sm" style="background-color: #3e000f;">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+
+      <!-- Left section: Logo -->
+      <div>
+        <img src="Resources/Images/logo.png" height="50" width="100" alt="GramVikas Logo">
+      </div>
+
+      <!-- Right section: Google Translate + Navigation -->
+      <div class="d-flex align-items-center">
+        
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element" class="me-3"></div>
+
+        <!-- Navigation -->
+        <ul class="nav mb-0">
+          <li><a href="index.html" class="nav-link px-2" style="color: #f7e9d6;">Home</a></li>
+          <li><a href="citizenlogin.html" class="nav-link px-2" style="color: #f7e9d6;">Citizen</a></li>
+          <li><a href="admin.html" class="nav-link px-2" style="color: #f7e9d6;">Admin</a></li>
+          <li><a href="about.html" class="nav-link px-2" style="color: #f7e9d6;">About Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+<!-- LOGIN FORM -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+          <h3 class="text-center mb-4 fw-bold" style="color: #490600;">Admin Access</h3>
+          <form id="adminLoginForm">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter admin username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+          <p class="text-danger text-center mt-3 d-none" id="errorMsg">Invalid login details</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN SCRIPT (No validation, always login) -->
+<script>
+  document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    localStorage.setItem("isAdminLoggedIn", "true");
+    window.location.href = "admin-dashboard.html";
+  });
+</script>
+
+<!-- FOOTER -->
+<section id="footer" style="background-color: #490600; color: #f7e9d6;">
+  <div class="container justify-content-between">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top border-light">
+      <div class="col mb-3">
+        <img src="Resources/Images/logo.png" width="150" alt="Gram Vikas Logo">
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a href="#"><img src="Resources/Images/facebook-svgrepo-com.svg" width="24" height="24"></a></li>
+          <li class="ms-3"><a href="#"><img src="Resources/Images/instagram-svgrepo-com.svg" width="24" height="24"></a></li>
+        </ul>
+      </div>
+      <div class="col mb-3"></div>
+      <div class="col mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li><a href="index.html" class="nav-link p-0" style="color: #f7e9d6;">Home</a></li>
+          <li><a href="citizenlogin.html" class="nav-link p-0" style="color: #f7e9d6;">Citizen</a></li>
+          <li><a href="admin.html" class="nav-link p-0" style="color: #f7e9d6;">Admin</a></li>
+          <li><a href="about.html" class="nav-link p-0" style="color: #f7e9d6;">About</a></li>
+        </ul>
+      </div>
+      <div class="col mb-3"></div>
+      <div class="col mb-3">
+        <h5>Contact Us</h5>
+        <p>IIM Rohtak<br>Management City NH-10 Southern Bypass, Sunaria,<br>Rohtak-124010 Haryana, India</p>
+      </div>
+    </footer>
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top border-light">
+      <p>© 2025 GramVikas. All Rights Reserved.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE TRANSLATE -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'hi,en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+

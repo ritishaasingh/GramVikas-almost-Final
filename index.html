@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GramVikas</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <section id="header">
+    <header class="p-3 custom-burgundy">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"> <img
+            src="Resources\Images\logo.png" alt="Gram Vikas logo" height="50" width="100" alt="">
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="index.html" class="nav-link px-2 text-secondary">Home</a></li>
+            <li><a href="citizenlogin.html" class="nav-link px-2 text-white">Citizen</a></li>
+            <li><a href="admin.html" class="nav-link px-2 text-white">Admin</a></li>
+            <li><a href="about.html" class="nav-link px-2 text-white">About Us</a></li>
+          <li class="nav-item">
+            <!-- Language Dropdown -->
+            
+          </li>
+          </ul>
+          <div class="text-end"> 
+            <button type="button"  id="google_translate_element"></button>
+             <button type="button" class="btn btn-outline-light me-2">Login</button>
+             <a href="signup.html" class="btn btn-warning">Sign-up</a>
+</div>
+
+      </div>
+    </header>
+  </section>
+
+  <!-- Main Content Section -->
+  <section id="main-content">
+    <div class="container col-xxl-12 px-2 py-3">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6"> <video width="700" height="500" autoplay loop muted>
+            <source src="Resources\video\video (1).mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome to GramVikas – Empowering Governance</h1>
+          <p class="lead">A web-based e-governance platform designed to promote transparency, citizen participation, and
+            real-time monitoring of rural development projects.</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start"> <button type="button"
+              class="btn btn-primary btn-lg px-4 me-md-2"onclick="window.location.href='citizenlogin.html'">Login as a Citizen</button> <button type="button"
+              class="btn btn-outline-secondary btn-lg px-4" onclick="window.location.href='admin.html'">Login as Admin</button> </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <!-- About -->
+  <section id="about">
+    <div class="container my-5">
+      <div class="p-5 bg-light rounded-4 shadow-sm text-center">
+
+        <h1 class="text-primary mb-4 fw-bold">About GramVikas</h1>
+        
+
+        <p class="lead mb-3">
+          GramVikas is a digital governance portal aimed at bridging the gap between rural citizens and local
+          administrative bodies. It empowers communities to report local issues, access welfare schemes, and stay
+          informed about ongoing development initiatives. Through transparency, accountability, and citizen engagement,
+          GramVikas redefines grassroots governance.
+        </p>
+
+        <p class="mb-4">
+          With a focus on <strong>transparency</strong>, <strong>accountability</strong>, and <strong>citizen
+            engagement</strong>,
+          GramVikas redefines the landscape of grassroots governance.
+        </p>
+
+        <a href="about.html" class="btn btn-primary btn-lg px-4">Learn More</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Services</h1>
+      </div>
+
+      <div class="d-flex justify-content-between flex-wrap gap-3">
+        <!-- Card 1 -->
+        <div class="card" style="width: 18rem;">
+          <img src="Resources\Images\complaint.jpg" alt="Complaint box" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Complaints</h5>
+            <p class="card-text">Submit complaints about electricity, water, infrastructure, or other civic issues. </p>
+
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" style="width: 18rem;">
+          <img src="Resources\Images\project.jpg" alt="Project going on" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Track Projects</h5>
+            <p class="card-text">Follow development projects in real-time using unique IDs provided by local
+              authorities.</p>
+
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" style="width: 18rem;">
+          <img src="Resources\Images\electricity.jpg" alt="Electricity poles"class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Electricity Reporting</h5>
+            <p class="card-text">Report the current electricity status in your area to help authorities identify
+              blackouts.</p>
+
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" style="width: 18rem;">
+          <img src="Resources\Images\scheme.jpg" alt="Women working on field" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Scheme Finder</h5>
+            <p class="card-text">Answer a few questions (age, gender, occupation, income) and get a list of welfare
+              schemes you are eligible for.</p>
+
+          </div>
+        </div>
+  </section>
+
+  <!-- Footer Section -->
+  
+
+      <section id="footer" style="background-color: #3e000f; color: #f7e9d6;">
+    <div class="container justify-content-between">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top border-light">
+        <div class="col mb-3">
+          <img src="Resources/Images/logo.png" width="150" alt="">
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a href="#"><img src="Resources/Images/facebook-svgrepo-com.svg" alt="Facebook icon" width="24" height="24"></a></li>
+            <li class="ms-3"><a href="#"><img src="Resources/Images/instagram-svgrepo-com.svg" alt="Instagram icon" width="24" height="24"></a></li>
+          </ul>
+        </div>
+        <div class="col mb-3"></div>
+        <div class="col mb-3">
+          <h5>Section</h5>
+          <ul class="nav flex-column">
+            <li><a href="index.html" class="nav-link p-0" style="color: #f7e9d6;">Home</a></li>
+            <li><a href="citizenlogin.html" class="nav-link p-0" style="color: #f7e9d6;">Citizen</a></li>
+            <li><a href="admin.html" class="nav-link p-0" style="color: #f7e9d6;">Admin</a></li>
+            <li><a href="about.html" class="nav-link p-0" style="color: #f7e9d6;">About</a></li>
+          </ul>
+        </div>
+        <div class="col mb-3"></div>
+        <div class="col mb-3">
+          <h5>Contact Us</h5>
+          <p>IIM Rohtak<br>Management City NH-10 Southern Bypass, Sunaria,<br>Rohtak-124010 Haryana, India</p>
+        </div>
+      </footer>
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>© 2025 GramVikas. All Rights Reserved.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+    <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+  <!-- Google Translate Scripts -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'hi,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

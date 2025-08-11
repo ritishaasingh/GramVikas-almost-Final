@@ -1,0 +1,71 @@
+/* Body Background */
+body {
+  background-color: #f7e9d6;
+}
+
+/* Navbar Styling */
+#header header {
+  background-color: #490600 !important;
+}
+
+#header header h2,
+#header header .nav-link {
+  color: #f7e9d6 !important;
+}
+
+#header header .nav-link:hover {
+  color: #fff3e6 !important; /* Slightly lighter beige on hover */
+}
+
+/* Complaint Form Box */
+#complaint-form .bg-light {
+  background-color: #f7e9d6 !important; /* Form background */
+  border: 2px solid #490600;
+}
+
+/* Labels and Text */
+#complaint-form label {
+  color: #490600;
+  font-weight: bold;
+}
+
+#complaint-form .form-control,
+#complaint-form .form-select,
+#complaint-form textarea {
+  border: 1px solid #490600;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #490600;
+  border-color: #490600;
+}
+
+.btn-primary:hover {
+  background-color: #721c0d;
+  border-color: #721c0d;
+}
+
+.btn-success {
+  background-color: #490600;
+  border-color: #490600;
+}
+
+.btn-success:hover {
+  background-color: #721c0d;
+  border-color: #721c0d;
+}
+
+/* Footer */
+#footer {
+  background-color: #490600;
+  color: #f7e9d6;
+}
+
+#footer a {
+  color: #f7e9d6;
+}
+
+#footer a:hover {
+  color: #fff3e6;
+}
